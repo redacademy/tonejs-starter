@@ -1,0 +1,30 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "no-alert": 0,
+    "no-bitwise": 0,
+    "camelcase": 1,
+    "curly": 1,
+    "eqeqeq": 1,
+    "no-console": 1,
+    "no-eq-null": 0,
+    "guard-for-in": 1,
+    "no-empty": 0,
+    "quotes": [1, "single"],
+    "no-unused-vars": 0,
+  },
+  "globals": {
+    "jQuery": false,
+    "$": false,
+    "_": false,
+    "Tone"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  }
+}

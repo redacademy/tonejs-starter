@@ -1,0 +1,47 @@
+$base-size: 10px;
+
+$color--light: #B278C6;
+$color--dark: #502F5F;
+
+:root {
+  --accent-color: rgb(245, 224, 252);
+  --default-color: #B278C6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $base-size;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+  position: relative;
+  background: $color--dark;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color--light;
+}
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  transition: 0.1s;
+  background: $color--light;
+}
