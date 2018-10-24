@@ -7,12 +7,12 @@ const gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   eslint = require('gulp-eslint'),
   browserSync = require('browser-sync'),
-  babel = require('gulp-babel');
+  babel = require('gulp-babel'),
+  sourcemaps = require('gulp-sourcemaps');
 
-// Create basic Gulp tasks
 gulp.task('sass', function(done) {
   gulp
-    .src('./css/sass/*.scss', { sourcemaps: true })
+    .src('./css/scss/*.scss', { sourcemaps: true })
     .pipe(prettyError())
     .pipe(sass())
     .pipe(
@@ -20,24 +20,26 @@ gulp.task('sass', function(done) {
         browsers: ['last 2 versions']
       })
     )
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css'))
     .pipe(cssnano())
-    .pipe(rename('style.min.css'))
+    .pipe(
+      rename({
+        extname: '.min.css'
+      })
+    )
     .pipe(gulp.dest('./build/css'));
 
   done();
 });
 
 gulp.task('lint', function() {
-  return (
-    gulp
-      .src(['./js/*.js'])
-      // Also need to use it here...
-      .pipe(prettyError())
-      .pipe(eslint())
-      .pipe(eslint.format())
-      .pipe(eslint.failAfterError())
-  );
+  return gulp
+    .src(['./js/*.js'])
+    .pipe(prettyError())
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task(
@@ -60,7 +62,6 @@ gulp.task(
   })
 );
 
-// Set-up BrowserSync and watch
 gulp.task('browser-sync', function() {
   browserSync.init({
     server: {
@@ -69,13 +70,13 @@ gulp.task('browser-sync', function() {
   });
 
   gulp
-    .watch(['build/css/*.css', 'build/js/*.js'])
+    .watch(['build/css/*.css', 'build/js/*.js', 'index.html'])
     .on('change', browserSync.reload);
 });
 
 gulp.task('watch', function() {
   gulp.watch('./js/*.js', gulp.series('scripts'));
-  gulp.watch('./css/sass/*.scss', gulp.series('sass'));
+  gulp.watch('./css/scss/**/*.scss', gulp.series('sass'));
 });
 
 gulp.task('default', gulp.parallel('browser-sync', 'watch'));

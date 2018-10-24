@@ -1,12 +1,12 @@
 {
   "name": "Tone.js-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Tone.js starter for making music with WebAudio",
   "main": "gulpfile.js",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-babel": "^7.0.1",
@@ -15,6 +15,7 @@
     "gulp-prettyerror": "^1.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0"
   },
   "scripts": {
@@ -22,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/resonantdoghouse/tone.js-starter.git"
+    "url": "git+https://github.com/redacademy/tonejs-starter"
   },
   "keywords": [
     "web-audio",
@@ -31,10 +32,7 @@
   "author": "Jim Bennett",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/resonantdoghouse/tone.js-starter/issues"
+    "url": "https://github.com/redacademy/tonejs-starter/issues"
   },
-  "homepage": "https://github.com/resonantdoghouse/tone.js-starter#readme",
-  "dependencies": {
-    "tone": "^0.12.80"
-  }
+  "homepage": "https://github.com/redacademy/tonejs-starter#readme"
 }

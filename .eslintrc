@@ -14,13 +14,10 @@
     "guard-for-in": 1,
     "no-empty": 0,
     "quotes": [1, "single"],
-    "no-unused-vars": 0,
+    "no-unused-vars": 0
   },
   "globals": {
-    "jQuery": false,
-    "$": false,
-    "_": false,
-    "Tone"
+    "Tone": false
   },
   "env": {
     "es6": true,

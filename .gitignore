@@ -1,6 +1,2 @@
-config.codekit3
 .DS_Store
-!application/
-node_modules/*
-package-lock.json
-!node_modules/tone
+node_modules/

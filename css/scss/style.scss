@@ -1,11 +1,11 @@
 $base-size: 10px;
 
-$color--light: #B278C6;
-$color--dark: #502F5F;
+$color--light: #b278c6;
+$color--dark: #502f5f;
 
 :root {
-  --accent-color: rgb(245, 224, 252);
-  --default-color: #B278C6;
+  --accent-color: #cd9bdd;
+  --default-color: #b278c6;
 }
 
 * {
@@ -18,11 +18,9 @@ html {
 
 body {
   font-family: "Press Start 2P", cursive;
-  cursor: pointer;
   position: relative;
   background: $color--dark;
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,4 +42,8 @@ body {
   color: black;
   transition: 0.1s;
   background: $color--light;
+}
+
+.music-controls {
+  padding: 2rem;
 }
